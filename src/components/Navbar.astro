@@ -1,0 +1,152 @@
+---
+const path = Astro.url.pathname;
+---
+
+<header>
+  <nav class="flex items-center justify-between p-2 mx-5">
+    <div class="flex justify-center gap-3 items-center hover:scale-110">
+      <img src="/logo_black.svg" alt="logo" class="h-10 dark:invert" />
+      <a href="/" class="text-xl hidden md:flex">MAS Dev | Desarrollo Web</a>
+    </div>
+    <div class="justify-center gap-3 items-center hidden lg:flex">
+      <ul class="flex gap-4 items-center">
+        <li
+        class=`${path === "/"
+        ? "border-b-4 border-green-600"
+        : "border-b-4 border-gray-600"} text-xl hover:scale-y-110 hover:text-primary`
+        >
+          <a href="/">Inicio</a>
+        </li>
+        <li
+        class=`${path === "/services"
+        ? "border-b-4 border-green-600"
+        : "border-b-4 border-gray-600"} text-xl hover:scale-y-110 hover:text-primary`
+        >
+          <a href="/services">Servicios</a>
+        </li>
+        <!-- <li
+        class=`${path === "/about"
+        ? "border-b-4 border-green-600"
+        : "border-b-4 border-gray-600"} text-xl hover:scale-y-110 hover:text-primary`
+        >
+          <a href="/about">Acerca de nosotros</a>
+        </li> -->
+      </ul>
+      <a href="/contact" class="bg-primary rounded-full py-3 px-4 text-xl text-white hover:bg-[#172554] duration-300 ease-linear hover:scale-110">Contactanos</a>
+      <button
+        data-switch-theme
+        class="flex relative rounded-lg p-2 lg:p-3 border border-gray-600 dark:border-gray-300 hover:bg-slate-400 duration-300 ease-linear"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 dark:hidden"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+          ></path>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 dark:flex hidden"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex items-center lg:hidden lg:invisible gap-3">
+      <button
+        data-switch-theme-mobile
+        class="flex relative rounded-lg p-2 border border-gray-600 dark:border-gray-300 hover:bg-slate-400 duration-300 ease-linear"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 dark:hidden"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+          ></path>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 dark:flex hidden"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+          ></path>
+        </svg>
+      </button>
+      <button
+        data-toggle-nav
+        data-open-nav="false"
+        class="outline-none w-10 h-10 flex flex-col items-center justify-center relative rounded-lg p-2 border"
+      >
+        <span
+          id="line1"
+          class="w-6 h-0.5 rounded-full bg-textcolor transition-all duration-300 ease-linear"
+        ></span>
+        <span
+          id="line2"
+          class="w-6 origin-center mt-1 h-0.5 rounded-full bg-textcolor transition-all duration-300 ease-linear"
+        ></span>
+        <span
+          id="line3"
+          class="w-6 mt-1 h-0.5 rounded-full bg-textcolor transition-all duration-300 ease-linear"
+        ></span>
+      </button>
+    </div>
+  </nav>
+  <div navbar-mobile class="w-full mt-4 hidden mx-5">
+    <ul class="w-full flex flex-col gap-y-3">
+      <li
+          class=`${path === "/"
+            ? "border-l-4 border-green-600"
+            : "border-l-4 border-gray-600"} w-full flex text-2xl pl-5 hover:scale-y-110 hover:text-primary cursor-pointer`
+        >
+          <a href="/" class="">Inicio</a>
+        </li>
+        <li
+        class=`${path === "/services"
+        ? "border-l-4 border-green-600"
+        : "border-l-4 border-gray-600"} w-full flex text-2xl pl-5 hover:scale-y-110 hover:text-primary cursor-pointer`
+        >
+          <a href="/services">Servicios</a>
+        </li>
+        <!-- <li
+        class=`${path === "/about"
+        ? "border-l-4 border-green-600"
+        : "border-l-4 border-gray-600"} w-full flex text-2xl pl-5 hover:scale-y-110 hover:text-primary cursor-pointer`
+        >
+          <a href="/about">Acerca de nosotros</a>
+        </li> -->
+        <li class="flex w-full justify-center">
+          <a href="/contact" class="bg-primary rounded-full py-3 px-4 text-2xl text-white hover:bg-[#172554] duration-300 ease-linear hover:scale-110">Contactanos</a>
+        </li>
+    </ul>
+  </div>
+</header>
